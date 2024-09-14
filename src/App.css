@@ -1,0 +1,139 @@
+.app {
+  text-align: center;
+}
+
+.whiteboard {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #f0f0f0; /* Light gray background */
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.1); /* Inner shadow for depth */
+}
+
+.toolbar {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  z-index: 10;
+  background-color: rgba(224, 224, 224, 0.9); /* Slightly darker than the whiteboard */
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  border: 1px solid #ccc;
+}
+
+.drawing-tool button,
+.toolbar button {
+  margin: 0;
+  padding: 8px;
+  background-color: #fff;
+  border: 1px solid #999;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 12px;
+  color: #333;
+  flex: 1 0 auto;
+  max-width: 100px;
+}
+
+.drawing-tool button:hover,
+.toolbar button:hover {
+  background-color: #f0f0f0;
+}
+
+.drawing-tool button.active {
+  background-color: #ddd;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.drawing-tool input[type='color'] {
+  width: 30px;
+  height: 30px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  background: none;
+}
+
+.sticky-note {
+  background-color: #feff9c;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  box-sizing: border-box;
+  border-radius: 2px;
+  border: 1px solid #e6e6e6;
+}
+
+.sticky-note textarea {
+  width: 100%;
+  height: 80%;
+  border: none;
+  resize: none;
+  background-color: transparent;
+  outline: none;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-size: 14px;
+  color: #333;
+}
+
+.sticky-note button {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  padding: 2px 5px;
+  background-color: #ff4c4c;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 10px;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.sticky-note button:hover {
+  background-color: #ff1a1a;
+}
+
+.image-upload button {
+  padding: 8px;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  color: white;
+  flex: 1 0 auto;
+  max-width: 100px;
+}
+
+.image-upload button:hover {
+  background-color: #45a049;
+}
+
+canvas {
+  cursor: crosshair;
+}
+
+@media (max-width: 768px) {
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    left: 5px;
+    right: 5px;
+  }
+
+  .drawing-tool button,
+  .toolbar button,
+  .image-upload button {
+    max-width: none;
+    width: 100%;
+  }
+}
